@@ -1,0 +1,19 @@
+[package]
+name = "ramreduct-setup"
+version = "3.5.3"
+edition = "2021"
+authors = ["Henry++", "RAM Reduct Rust Port"]
+description = "Installer for RAM Reduct (Rust Edition)"
+license = "GPL-3.0"
+build = "build.rs"
+
+[[bin]]
+name = "ramreduct-setup"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

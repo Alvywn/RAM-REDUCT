@@ -1,0 +1,60 @@
+#include <windows.h>
+#include "resource.h"
+
+LANGUAGE LANG_ENGLISH, SUBLANG_DEFAULT
+
+IDD_INSTALLER DIALOGEX 0, 0, 290, 192
+STYLE WS_POPUPWINDOW | WS_CAPTION | DS_SHELLFONT | DS_MODALFRAME | DS_CENTER
+CAPTION L"RAM Reduct 3.5.3 Setup"
+FONT 9, "Segoe UI"
+{
+	LTEXT			L"RAM Reduct (Rust Edition) v3.5.3", IDC_HEADER_TITLE, 12, 10, 266, 14
+	LTEXT			L"Lightweight real-time system memory monitor and cleaner.", IDC_HEADER_SUB, 12, 24, 266, 12
+
+	LTEXT			L"Destination folder:", IDC_PATH_LABEL, 12, 44, 266, 10
+	EDITTEXT		IDC_PATH_EDIT, 12, 56, 212, 14, ES_AUTOHSCROLL | WS_TABSTOP
+	PUSHBUTTON		L"Browse...", IDC_BROWSE_BTN, 228, 56, 50, 14
+
+	AUTOCHECKBOX	L"Create Start Menu shortcut", IDC_STARTMENU_CHK, 12, 78, 266, 12
+	AUTOCHECKBOX	L"Create Desktop shortcut", IDC_DESKTOP_CHK, 12, 92, 266, 12
+	AUTOCHECKBOX	L"Run automatically in background on Windows startup", IDC_AUTORUN_CHK, 12, 106, 266, 12
+	AUTOCHECKBOX	L"Launch RAM Reduct in background now", IDC_LAUNCH_CHK, 12, 120, 266, 12
+
+	LTEXT			L"Ready to install.", IDC_STATUS_TEXT, 12, 142, 266, 14
+
+	DEFPUSHBUTTON	L"Install", IDC_INSTALL_BTN, 116, 164, 52, 16
+	PUSHBUTTON		L"Uninstall", IDC_UNINSTALL_BTN, 172, 164, 52, 16
+	PUSHBUTTON		L"Cancel", IDC_CLOSE_BTN, 228, 164, 50, 16
+}
+
+IDI_SETUP		ICON		"..\\src\\res\\100.ico"
+1				RT_MANIFEST	"manifest.xml"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION		3,5,3,0
+PRODUCTVERSION	3,5,3,0
+FILEFLAGSMASK	0x3fL
+FILEFLAGS		0x0L
+FILEOS			VOS_NT_WINDOWS32
+FILETYPE		VFT_APP
+FILESUBTYPE		VFT2_UNKNOWN
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "040904B0"
+		{
+			VALUE "CompanyName", "Henry++\0"
+			VALUE "FileDescription", "RAM Reduct Setup\0"
+			VALUE "FileVersion", "3.5.3.0\0"
+			VALUE "InternalName", "ramreduct-setup\0"
+			VALUE "LegalCopyright", "(c) 2011-2026 Henry++\0"
+			VALUE "OriginalFilename", "ramreduct-3.5.3-setup.exe\0"
+			VALUE "ProductName", "RAM Reduct\0"
+			VALUE "ProductVersion", "3.5.3.0\0"
+		}
+	}
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x0409, 1200
+	}
+}
